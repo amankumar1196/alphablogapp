@@ -18,13 +18,10 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%= link_to "New Article", new_article_path, class:"dropdown-item" %>
-          <a class="dropdown-item" href="#">Another action</a>
+          <%= link_to "Edit Article", articles_path, class:"dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <%= link_to "All Articles", articles_path, class:"dropdown-item" %>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
