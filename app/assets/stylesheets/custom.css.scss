@@ -35,8 +35,8 @@
   font-weight: bold;
 }
 .footer {
-  margin-top: 45px;
-  padding-top: 5px;
+  margin-top: 15%;
+  padding-top: 15px;
   border-top: 1px solid #eaeaea;
   color: #777;
 }
@@ -57,4 +57,7 @@
 .footer ul li {
   float: left;
   margin-left: 15px;
+}
+.bgerror {
+  background-color: rgb(245, 195, 195);
 }
