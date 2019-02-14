@@ -1,10 +1,22 @@
 <div class="card col-md-10 offset-1">
-    <h3 class="p-3 text-center card-title text-info"> 
+    <h3 class="p-3 text-center card-title text-info border-bottom border-secondary"> 
         <%= @article.title %>
     </h3>
     
     <div class="card-body">
         <%= simple_format(@article.description) %>
+        <% if @article.user %>
+        <ul class="listing">
+            <div class="row">
+                <div class="col-md-12 pt-4">
+                    <li class="article-title">
+                        <small>Author : <%= link_to @article.user.username, user_path(@article.user) %>
+                        </small>
+                    </li>
+                </div>
+            </div>
+        </ul>
+        <%end%>
     </div>
 </div>
 

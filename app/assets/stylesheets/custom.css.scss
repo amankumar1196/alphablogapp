@@ -18,9 +18,10 @@
   text-decoration: none;
 }
 .createheading {
-  margin-top: 30px;
+  margin-top: 10px;
   color: #72a8bf;
   text-align: center;
+  border: 5px double #72a8bf;
 }
 .jumbotron {
   background-image: asset-url("bg.jpg");
@@ -81,4 +82,8 @@
 .article-meta-details {
   border-top: 1px solid#eaeaea;
   margin-top: 15px;
+}
+.listing {
+  list-style: none;
+  padding: 0px;
 }
