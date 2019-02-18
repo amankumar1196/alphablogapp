@@ -15,9 +15,6 @@
 
     <% if logged_in? %>
 
-      <li class="nav-item">
-        <%= link_to 'Log Out', logout_path, method: :delete, class:"nav-link"%>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Actions
@@ -27,6 +24,18 @@
           <%= link_to "Edit Article", articles_path, class:"dropdown-item" %>
           <div class="dropdown-divider"></div>
           <%= link_to "All Articles", articles_path, class:"dropdown-item" %>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Profile <%= "Admin" if current_user.admin?%>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Dashboard", user_path(current_user), class:"dropdown-item" %>
+          <%= link_to "Edit Profile", edit_user_path(current_user), class:"dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Sign Out", logout_path, method: :delete, class:"dropdown-item" %>
         </div>
       </li>
 
