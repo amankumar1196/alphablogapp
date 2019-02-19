@@ -1,5 +1,10 @@
 <h2 class="createheading"><%= "Category: " + @category.name %> </h2>
 <br/>
+<% if logged_in? and current_user.admin? %>
+    <div class="float-right">
+        <%= link_to "Edit Category Name", edit_category_path(@category), class:"btn btn-info"%>
+    </div>
+<% end %>
 <div>
     <%= render 'articles/article', obj: @category_articles %>
 </div>

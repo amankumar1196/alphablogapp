@@ -31,7 +31,7 @@
             
             <div class="form-group">
                 <div class="col-md-12">
-                <%= link_to 'CANCEL', user_path(current_user), class:'btn btn-danger btn-md offset-5 mr-3'%>
+                <%= link_to 'CANCEL', root_path, class:'btn btn-danger btn-md offset-5 mr-3'%>
                 <%= f.submit(@user.new_record? ? "SUBMIT" : "UPDATE", class:'btn btn-success btn-md')%>
                 </div>
             </div>
