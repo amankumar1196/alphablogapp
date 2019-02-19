@@ -9,11 +9,21 @@
             <div class="article-body">
                 <%= truncate(article.description, length: 200) %>
                 <div class="article-meta-details">
-                <small>Created By: <%= article.user.username if article.user %>,
-                                    <%= time_ago_in_words(article.created_at) %> ago,
-                                    last updated: <%= time_ago_in_words(article.updated_at) %> ago
-                </small>
-            </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <% if article.categories.any? %>
+                                <small><p>Categories: <%= render article.categories %></p></small>
+                            <% end %>
+                        </div>
+                        
+                        <div class="col-md-7">
+                            <small>Created By: <%= article.user.username if article.user %>,
+                                            <%= time_ago_in_words(article.created_at) %> ago,
+                                            last updated: <%= time_ago_in_words(article.updated_at) %> ago
+                            </small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </br>

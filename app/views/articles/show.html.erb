@@ -5,18 +5,30 @@
     
     <div class="card-body">
         <%= simple_format(@article.description) %>
-        <% if @article.user %>
-        <ul class="listing">
-            <div class="row">
-                <div class="col-md-12 pt-4">
-                    <li class="article-title">
-                        <small>Author : <%= link_to @article.user.username, user_path(@article.user) %>
-                        </small>
-                    </li>
-                </div>
-            </div>
-        </ul>
-        <%end%>
+        
+            
+        
+            <% if @article.user %>
+                <ul class="listing">
+                    <div class="row">
+
+                        <% if @article.categories.any? %>
+                        <div class="col-md-6 text-center">
+                            <li>
+                                <p>Categories: <%= render @article.categories %></p>
+                            </li>
+                        </div>
+                        <% end %>
+
+                        <div class="col-md-6 text-center">
+                            <li class="article-title">
+                                <small>Author : <%= link_to @article.user.username, user_path(@article.user) %>
+                                </small>
+                            </li>
+                        </div>
+                    </div>
+                </ul>
+            <%end%>
     </div>
 </div>
 

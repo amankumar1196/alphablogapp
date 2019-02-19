@@ -6,8 +6,11 @@
         <div class="col-md-4 offset-4 pt-3">
             <div class="card bg-light">
                 <div class="article-title">
-                    <%= link_to "#{category.name}", category_path(category) %>
+                    <%= link_to "#{category.name}", category_path(category) %>     
                 </div>
+                <small class="text-center">
+                    <p>( <%= pluralize(category.articles.count, "Article") %> )</p>
+                </small>
             </div>
         </div>
     </div>

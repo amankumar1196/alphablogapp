@@ -18,6 +18,17 @@
                     <%= f.text_area :description, rows: 10, class:"form-control", placeholder: "Wirte your article here...", autofocus:true %>
                 </div>
             </div>
+
+            <div class="form-group row">
+                <div class="control-label col-sm-2">
+                    <%= f.label :Category %>
+                </div>
+                <div class="col-sm-8">
+                    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+                        <% cb.label(class: "checkbox-inline input-checkbox mr-3") {cb.check_box(class: "checkbox mr-1") + cb.text} %>
+                    <%end%>
+                </div>
+            </div>
             
             <div class="form-group">
                 <div class="col-md-12">
